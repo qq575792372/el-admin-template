@@ -12,7 +12,7 @@ const constantRoutes = [
   {
     path: '/index',
     name: 'index',
-    component: () => import('@/views/index'),
+    component: () => import('@/views/index.vue'),
     children: [
       {
         path: 'home',
@@ -20,7 +20,7 @@ const constantRoutes = [
         meta: {
           title: '首页'
         },
-        component: () => import('@/views/home')
+        component: () => import('@/views/Home.vue')
       },
       {
         path: 'about',
@@ -28,12 +28,12 @@ const constantRoutes = [
         meta: {
           title: '关于'
         },
-        component: () => import('@/views/about')
+        component: () => import('@/views/About.vue')
       },
       // 不在配置中的路由，默认显示
       {
         path: '*',
-        component: () => import('@/views/home')
+        component: () => import('@/views/Home.vue')
       }
     ]
   },
@@ -55,6 +55,8 @@ const router = new VueRouter({
 // reset router
 export function resetRouter() {
   const newRouter = createRouter()
-  router.matcher = newRouter.matcher
+  router.matcher = newRouter.matcher // reset router
+  // 防止退出后再登录，再次加载权限菜单会有重复的路由
+  router.options.routes = constantRoutes
 }
 export default router

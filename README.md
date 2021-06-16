@@ -2,7 +2,7 @@
 
 ```bash
 # 克隆项目
-git clone http://119.23.220.221:10080/frontend/vue_web_template.git
+git clone https://gitee.com/qq1020431880/vue-element-template.git
 
 # 进入项目目录
 cd vue_web_template
@@ -20,8 +20,7 @@ npm run dev
 npm start
 ```
 
-服务启动成功后，浏览器访问 [http://localhost:9520](http://localhost:9520)
-
+服务启动成功后，浏览器访问 [http://localhost:9000](http://localhost:9000)
 
 ## 环境
 
@@ -33,8 +32,7 @@ npm start
 在使用npm run dev 和 build dev/stage/prod 会根据.env.XXX.js里的配置来连接不同环境的接口地址
 ```
 
-具体环境配置可以参考vue-cli官网的 [环境变量和模式](https://cli.vuejs.org/zh/guide/mode-and-env.html)
-
+具体环境配置可以参考 vue-cli 官网的 [环境变量和模式](https://cli.vuejs.org/zh/guide/mode-and-env.html)
 
 ## 发布
 
@@ -48,7 +46,6 @@ npm run build:stage
 # 构建生产环境
 npm run build:prod
 ```
-
 
 ## 其它
 
@@ -66,4 +63,4 @@ npm run lint
 npm run lint -- --fix
 ```
 
-本模板基于vue-cli4改造，更多使用信息参考 [使用文档](https://cli.vuejs.org/zh/)
+本模板基于 vue-cli4 改造，更多使用信息参考 [使用文档](https://cli.vuejs.org/zh/)

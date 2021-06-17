@@ -2,7 +2,7 @@
 
 ```bash
 # 克隆项目
-git clone http://119.23.220.221:10080/frontend/vue_web_template.git
+git clone https://gitee.com/qq1020431880/vue-element-template.git
 
 # 进入项目目录
 cd vue_web_template
@@ -20,7 +20,7 @@ npm run dev
 npm start
 ```
 
-服务启动成功后，浏览器访问 [http://localhost:9520](http://localhost:9520)
+服务启动成功后，浏览器访问 [http://localhost:9000](http://localhost:9000)
 
 
 ## 环境

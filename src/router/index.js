@@ -1,62 +1,62 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from "vue";
+import VueRouter from "vue-router";
 // use vue-router
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 // constantRoutes
 const constantRoutes = [
   {
-    path: '/',
-    redirect: '/index',
+    path: "/",
+    redirect: "/index",
   },
   {
-    path: '/index',
-    name: 'index',
-    component: () => import('@/views/index.vue'),
+    path: "/index",
+    name: "index",
+    component: () => import("@/views/index.vue"),
     children: [
       {
-        path: 'home',
-        name: 'home',
+        path: "home",
+        name: "home",
         meta: {
-          title: '首页'
+          title: "首页",
         },
-        component: () => import('@/views/Home.vue')
+        component: () => import("@/views/home.vue"),
       },
       {
-        path: 'about',
-        name: 'about',
+        path: "about",
+        name: "about",
         meta: {
-          title: '关于'
+          title: "关于",
         },
-        component: () => import('@/views/About.vue')
+        component: () => import("@/views/about.vue"),
       },
       // 不在配置中的路由，默认显示
       {
-        path: '*',
-        component: () => import('@/views/Home.vue')
-      }
-    ]
+        path: "*",
+        component: () => import("@/views/home.vue"),
+      },
+    ],
   },
 
   // 404 page must be placed at the end !!!
   {
-    path: '*',
-    redirect: '/404',
-    hidden: true
-  }
-]
+    path: "*",
+    redirect: "/404",
+    hidden: true,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'hash', // hash or history
+  mode: "hash", // hash or history
   // base: '/vue_web_template/', // 路径访问加前缀的时候需要配置，需和vue.config.js中publicPath配置一样
-  routes: constantRoutes
-})
+  routes: constantRoutes,
+});
 
 // reset router
 export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher; // reset router
   // 防止退出后再登录，再次加载权限菜单会有重复的路由
-  router.options.routes = constantRoutes
+  router.options.routes = constantRoutes;
 }
-export default router
+export default router;
